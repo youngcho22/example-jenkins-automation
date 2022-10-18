@@ -2,17 +2,9 @@ pipeline {
     agent {
         docker { image 'node' }
     }
-    parameters {
-        string(
-            name: 'TESTMO_URL',
-            defaultValue: 'https://youngcho-instabase.testmo.net/',
-            description: ''
-        )
-        string(
-            name: 'TESTMO_TOKEN',
-            defaultValue: 'testmo_api_eyJpdiI6IjJLL0IweEl4TWlxaXZpNnJwaHFWL2c9PSIsInZhbHVlIjoiZS9SYU9BeEV1bWZCT2Z6M1Nua1E3RmozOFZpY042M1JKWkJ3dnhaSDlFQT0iLCJtYWMiOiI3NTI3NTkzZGJlNDgzNTI2ZmMyZTI0YzU3NWJkMWU0OWI0ZTc4OTdjYzE5M2MyNjA1NmEzYzM4OGNkODkwMmQxIiwidGFnIjoiIn0=',
-            description: ''
-        )
+    environment {
+        TESTMO_URL = 'https://youngcho-instabase.testmo.net/'
+        TESTMO_TOKEN = 'testmo_api_eyJpdiI6IjJLL0IweEl4TWlxaXZpNnJwaHFWL2c9PSIsInZhbHVlIjoiZS9SYU9BeEV1bWZCT2Z6M1Nua1E3RmozOFZpY042M1JKWkJ3dnhaSDlFQT0iLCJtYWMiOiI3NTI3NTkzZGJlNDgzNTI2ZmMyZTI0YzU3NWJkMWU0OWI0ZTc4OTdjYzE5M2MyNjA1NmEzYzM4OGNkODkwMmQxIiwidGFnIjoiIn0='
     }
     stages {
         stage('Build') {
