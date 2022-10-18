@@ -18,6 +18,7 @@ pipeline {
             }
             steps {
                 //sh 'npm ci'
+                sh 'npm config set unsafe-perm=true'
                 sh 'npm install --no-save @testmo/testmo-cli'
 
                 // Optionally add a couple of fields such as the
